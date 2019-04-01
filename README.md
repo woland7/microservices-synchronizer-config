@@ -14,7 +14,7 @@ Etcdwatcher-OpenShift https://github.com/woland7/jenkins-etcdopenshift-sharedlib
 Jmeter-docker https://github.com/woland7/jmeter-docker keeps the code for a JMeter container image along with scripts to run tests for TestEtcdWatcher.
 
 ### TestEtcdWatcher
-TestEtcdWatcher https://github.com/woland7/TestEtcdWatcher is a web application to set up a case study in order to evaluate if *Synchronizer* works as expected.
+TestEtcdWatcher https://github.com/woland7/TestEtcdWatcher is a web application to set up a case study in order to evaluate if *Synchronizer* works as expected. It could be changed as one sees fit.
 
 ## How To
 
@@ -32,6 +32,7 @@ An active OpenShift cluster
 
 - Use the configurations file provided in this repository to create the imagestream, the buildconfig and the deployconfig to create a JMeter application which will be used to perform the tests.
   - As there is no JMeter default template in the OpenShift catalogue, one should create the application manually by providing the configuration files.
+  - Instead, when there are such templates, one could simply use the OpenShift catalogue and then all these operations would performed by the platform under the hood.
 
 - Once the previous steps have been accomplished one should create the Jenkins pipeline. A Jenkins pipeline is also provided in this repository.
   - Of course, IPs should be edited accordingly.
