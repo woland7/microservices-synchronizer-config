@@ -1,0 +1,62 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+  creationTimestamp: '2018-10-03T12:42:15Z'
+  generation: 30
+  labels:
+    app: jmeter-testsuite
+  name: jmeter-testsuite
+  namespace: tesi
+  resourceVersion: '16954484'
+  selfLink: >-
+    /apis/apps.openshift.io/v1/namespaces/tesi/deploymentconfigs/openshift-jee-sample
+  uid: c187bf94-c709-11e8-9de5-fa163ee7bbde
+spec:
+  replicas: 1
+  selector:
+    deploymentconfig: jmeter-testsuite
+  strategy:
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+    resources: {}
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jmeter-testsuite
+        deploymentconfig: jmeter-testsuite
+    spec:
+      containers:
+        - image: jmeter-testsuite:latest
+          name: jmeter-testsuite
+          comand:
+            - ./executetest.sh
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - jmeter-testsuite
+        from:
+          kind: ImageStreamTag
+          name: 'jmeter-testsuite:latest'
+          namespace: tesi
+        lastTriggeredImage: >-
+          docker-registry.default.svc:5000/tesi/openshift-jee-sample@sha256:1b7da0f4bc1212d55174205157a738d46e0f38a33041b9cdf5d4735edfb087dc
+      type: ImageChange
+    - type: ConfigChange
+status:

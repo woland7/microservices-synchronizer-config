@@ -1,0 +1,42 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+  labels:
+    app: jmeter-testsuite
+  name: jmeter-testsuite
+  namespace: tesi
+  selfLink: /apis/build.openshift.io/v1/namespaces/tesi/buildconfigs/jmeter-testsuite
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'jmeter-testsuite:latest'
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: 'https://github.com/woland7/jmeter-docker.git'
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: DockerImage
+        name: 'openjdk:8-jre-slim'
+    type: Docker
+  triggers:
+    - imageChange:
+        lastTriggeredImageID: >-
+          docker.io/openshift/wildfly-101-centos7@sha256:dfc66d3681c5a3000a852947f3a3679e72ac016b0823b3e474d420378f555c2d
+      type: ImageChange
+    - type: ConfigChange
+    - generic:
+        secret: ef608792b1f93988
+      type: Generic
+    - github:
+        secret: 7c78239b5fa4ab9d
+      type: GitHub
+status:
