@@ -1,8 +1,13 @@
 # microservices-synchronizer-config
-Configuration repository for microservices *Synchronizer*. It keeps Jenkins pipeline examples and YAML file for configurating a simple continuous deployment pipeline.
+Configuration repository for microservices *Synchronizer*.
+*Synchronizer* is a service to deal with synchronization issues in microservices-based CD pipelines backed by a service registry component.
+
+This repository keeps Jenkins pipeline examples and YAML files for configuring a simple continuous deployment pipeline.
 It also keeps links to support repositories.
 
-*Synchronizer* could be also implemented with other service registry and also other adapter implementations beside a Jenkins Shared library could be developed. We also thought of implementing *Synchronizer* by using the Sidecar design pattern.
+*Synchronizer* could be also implemented with other service registry and could also have other adapter implementations beside a Jenkins Shared library.
+
+In future, we are also thinking of implementing *Synchronizer* by using the Sidecar design pattern.
 
 ### jenkins-etcdwatcher-sharedlibrary
 Jenkins-etcdwatcher-sharedlibrary https://github.com/woland7/jenkins-etcdopenshift-sharedlibrary keeps the code for the implementation of the adatper as a Jenkins shared library.
