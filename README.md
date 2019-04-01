@@ -8,7 +8,7 @@ It also keeps links to support repositories.
 Jenkins-etcdwatcher-sharedlibrary https://github.com/woland7/jenkins-etcdopenshift-sharedlibrary keeps the code for the implementation of the adatper as a Jenkins shared library.
 
 ### etcdwatcher-OpenShift
-Etcdwatcher-OpenShift https://github.com/woland7/jenkins-etcdopenshift-sharedlibrary keeps the code for the implementation of the synchronizer for etcd for the OpenShift platform, which has been called etcdwatcher.
+Etcdwatcher-OpenShift https://github.com/woland7/etcdwatcher-openshift/blob/master/etcdwatcher.go keeps the code for the implementation of the synchronizer for etcd for the OpenShift platform, which has been called etcdwatcher.
 
 ### jmeter-docker
 Jmeter-docker https://github.com/woland7/jmeter-docker keeps the code for a JMeter container image along with scripts to run tests for TestEtcdWatcher.
@@ -20,7 +20,7 @@ TestEtcdWatcher https://github.com/woland7/TestEtcdWatcher is a web application 
 
 This section briefly explains how to set up a CD pipeline on OpenShift/Kubernetes.
 
-#### Preconditions
+### What you need
 
 An active OpenShift cluster
 
