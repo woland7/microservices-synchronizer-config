@@ -5,9 +5,9 @@ Configuration repository for microservices *Synchronizer*.
 This repository keeps Jenkins pipeline examples and YAML files for configuring a simple continuous deployment pipeline.
 It also keeps links to support repositories.
 
-*Synchronizer* could be also implemented with other service registry and could also have other adapter implementations beside a Jenkins Shared library.
+*Synchronizer* could be also implemented with other service registries and could also have other adapter implementations beside a Jenkins Shared library.
 
-In future, we are also thinking of implementing *Synchronizer* by using the Sidecar design pattern.
+In future, we are also thinking of implementing *Synchronizer* by exploiting the Sidecar design pattern.
 
 ### jenkins-etcdwatcher-sharedlibrary
 Jenkins-etcdwatcher-sharedlibrary https://github.com/woland7/jenkins-etcdopenshift-sharedlibrary keeps the code for the implementation of the adatper as a Jenkins shared library.
@@ -37,7 +37,7 @@ An active OpenShift cluster
 
 - Use the configurations file provided in this repository to create the imagestream, the buildconfig and the deployconfig to create a JMeter application which will be used to perform the tests.
   - As there is no JMeter default template in the OpenShift catalogue, one should create the application manually by providing the configuration files.
-  - Instead, when there are such templates, one could simply use the OpenShift catalogue and then all these operations would performed by the platform under the hood.
+  - Instead, when there are such templates, one could simply use the OpenShift catalogue and then all these operations would be performed by the platform under the hood.
 
 - Once the previous steps have been accomplished one should create the Jenkins pipeline. A Jenkins pipeline is also provided in this repository.
   - Of course, IPs should be edited accordingly.
