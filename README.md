@@ -22,7 +22,7 @@ Jmeter4docker https://github.com/woland7/jmeter4docker keeps the code for a JMet
 TestSynchronizer https://github.com/woland7/TestSynchronizer is a web application to set up a case study in order to evaluate if *Synchronizer* works as expected for a continous deployment pipeline use case. It could be changed as one sees fit.
 
 ### Microservices Demo
-Microservices Demo https://github.com/microservices-demo is a benchmark microservices application; we have used it to test the application bootstrapping use case. 
+Microservices Demo https://github.com/microservices-demo is a benchmark microservices application; we have used it to test the application bootstrapping use case. You should edit the catalogue microservice to disable the circuit-breaker, which they have implemented.
 
 ## How To-Continuos Deployment Pipeline
 
